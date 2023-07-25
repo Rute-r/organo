@@ -18,7 +18,6 @@ const Formulario = (props) => {
       imagem,
       time,
     });
-
     setNome('');
     setCargo('');
     setImagem('');
@@ -28,7 +27,7 @@ const Formulario = (props) => {
   return (
     <section className="formulario">
       <form onSubmit={aoSalvar}>
-        <h2>Preencha os dados para criar o card do colaborador.</h2>
+        <h2>Preencha os dados para criar o card do colaborador</h2>
         <CampoTexto
           obrigatorio={true}
           label="Nome"
@@ -45,7 +44,7 @@ const Formulario = (props) => {
         />
         <CampoTexto
           label="Imagem"
-          placeholder="Informe o endereço da imagem"
+          placeholder="Digite o endereço da imagem"
           valor={imagem}
           aoAlterado={(valor) => setImagem(valor)}
         />
@@ -56,7 +55,7 @@ const Formulario = (props) => {
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />
-        <Botao> Criar Card </Botao>
+        <Botao>Criar Card</Botao>
       </form>
     </section>
   );
