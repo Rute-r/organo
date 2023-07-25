@@ -1,0 +1,28 @@
+.rodape {
+  background-image: url('/public/imagens/fundo.png');
+  background-position: center;
+  background-color: #6278f7;
+  display: flex;
+  color: #fff;
+  height: 213px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.redes-socias {
+  width: 162.19px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.redes-socias img {
+  width: 30px;
+}
+
+.logo-organo img {
+  width: 166px;
+}
+
+.creditos p {
+  font-size: 20px;
+}
