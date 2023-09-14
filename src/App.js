@@ -3,6 +3,7 @@ import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Time from './componentes/Time';
 import Rodape from './componentes/Rodape';
+import Toggle from './componentes/Toggle';
 
 function App() {
   const times = [
@@ -44,28 +45,40 @@ function App() {
   ];
 
   const [colaboradores, setColaborador] = useState([]);
+  const [toggle, setToggle] = useState(true);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     setColaborador([...colaboradores, colaborador]);
   };
 
+  const toggleFormulario = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <div className="App">
       <Banner />
-      <Formulario
-        times={times.map((time) => time.nome)}
-        aoColaboradorCadastrado={(colaborador) => aoNovoColaboradorAdicionado(colaborador)}
-      />
-
-      {times.map((time) => (
-        <Time
-          key={time.nome}
-          nome={time.nome}
-          corPrimaria={time.corPrimaria}
-          corSecundaria={time.corSecundaria}
-          colaboradores={colaboradores.filter((colaborador) => colaborador.time === time.nome)}
+      {toggle && (
+        <Formulario
+          times={times.map((time) => time.nome)}
+          aoColaboradorCadastrado={(colaborador) => aoNovoColaboradorAdicionado(colaborador)}
         />
-      ))}
+      )}
+
+      <Toggle toggleFormulario={toggleFormulario} />
+      <section className="times">
+        <h1>Minha Organização</h1>
+
+        {times.map((time) => (
+          <Time
+            key={time.nome}
+            nome={time.nome}
+            corPrimaria={time.corPrimaria}
+            corSecundaria={time.corSecundaria}
+            colaboradores={colaboradores.filter((colaborador) => colaborador.time === time.nome)}
+          />
+        ))}
+      </section>
 
       <Rodape />
     </div>

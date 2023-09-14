@@ -1,0 +1,11 @@
+.botaoToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
